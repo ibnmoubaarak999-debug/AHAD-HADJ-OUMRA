@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AHAD HADJ & OUMRA | VIP</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+</head>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18/build/css/intlTelInput.css">
+
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18/build/js/intlTelInput.min.js"></script>
+
+
+<body>
+
+<header>
+
+  <div class="logo">
+
+<div class="logo-icon">
+🕋
+</div>
+
+<div>
+
+<span>AHAD</span>
+
+<small>
+HADJ & OUMRA
+</small>
+
+</div>
+
+</div>
+
+  <nav id="menu">
+
+    <a href="#home">Accueil</a>
+    <a href="#offers">Offres</a>
+    <a href="#reviews">Avis</a>
+    <a href="#contact">Contact</a>
+
+  </nav>
+
+
+  <div class="hamburger" onclick="toggleMenu()">
+    ☰
+  </div>
+
+  <div class="language">
+
+<button onclick="changeLang('fr')">
+🇫🇷
+</button>
+
+<button onclick="changeLang('ar')">
+🇸🇦
+</button>
+
+<button onclick="changeLang('en')">
+🇬🇧
+</button>
+
+</div>
+
+</header>
+
+<section class="hero" id="home">
+
+  <p class="slogan>">
+    "Votre Confiance, Notre Engagement pour un Voyage Spirituel Inoubliable"
+  </p>
+
+  <video autoplay muted loop playsinline class="video-bg">
+    <source src="videos/kaaba.mp4" type="video/mp4">
+  </video>
+
+  <div class="overlay"></div>
+
+  <div class="content">
+    <h1 id="title">Votre Voyage Sacré Commence Ici</h1>
+    <p id="subtitle">Accomplissez votre Oumra ou votre Hadj avec nos différents services</p>
+    <a href="#booking" class="btn">Réserver</a>
+  </div>
+
+</section>
+
+<section class="packages">
+
+<h2>
+Nos Forfaits Hajj & Oumra
+</h2>
+
+<div class="packages-container">
+
+
+<!-- FORFAIT 1 -->
+<div class="package">
+
+<h3>Oumra Essentielle</h3>
+
+<p class="price">à partir de 1290€</p>
+
+<ul>
+<li>✈️ Vol inclus</li>
+<li>🏨 Hôtel 3★</li>
+<li>🚐 Transferts</li>
+<li>👳 Guide</li>
+</ul>
+
+<button class="btn" onclick="book('Oumra Essentielle')">
+Réserver
+</button>
+
+</div>
+
+
+<!-- FORFAIT 2 -->
+<div class="package vip">
+
+<h3>Oumra VIP</h3>
+
+<p class="price">à partir de 2490€</p>
+
+<ul>
+<li>✈️ Vol premium</li>
+<li>🏨 Hôtel 5★ proche Haram</li>
+<li>🚐 Transport privé</li>
+<li>👳 Accompagnement complet</li>
+</ul>
+
+<button class="btn" onclick="book('Oumra VIP')">
+Réserver
+</button>
+
+</div>
+
+
+<!-- FORFAIT 3 -->
+<div class="package">
+
+<h3>Hajj Premium</h3>
+
+<p class="price">Sur devis</p>
+
+<ul>
+<li>🕋 Organisation complète</li>
+<li>🏨 Hébergement haut de gamme</li>
+<li>🚐 Logistique totale</li>
+<li>👳 Encadrement religieux</li>
+</ul>
+
+<button class="btn" onclick="book('Hajj Premium')">
+Demander un devis
+</button>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<section class="offers" id="offers">
+  <h2>Nos Offres Premium</h2>
+  <div class="cards">
+
+    <div class="card">
+      <h3>VIP</h3>
+      <p>Hôtels 5⭐ + vue Kaaba + transport privé</p>
+      <button onclick="book('VIP')">Réserver</button>
+    </div>
+
+    <div class="card">
+      <h3>Standard</h3>
+      <p>Confort optimal à prix réduit</p>
+      <button onclick="book('Standard')">Réserver</button>
+    </div>
+
+  </div>
+</section>
+
+<section class="why">
+
+<h2>
+Pourquoi choisir AHAD ?
+</h2>
+
+
+<div class="features">
+
+
+<div class="feature">
+
+🕋
+
+<h3>
+Accompagnement spirituel
+</h3>
+
+<p>
+Une assistance complète avant et pendant votre voyage.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+⭐
+
+<h3>
+Service VIP
+</h3>
+
+<p>
+Des prestations adaptées aux voyageurs exigeants.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+🏨
+
+<h3>
+Hôtels Premium
+</h3>
+
+<p>
+Sélection d’hébergements confortables.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+<section class="booking">
+
+<h2>
+Réservation
+</h2>
+
+<form id="bookingForm">
+
+<input type="text" id="name" placeholder="Nom complet" required>
+
+<input id="phone" type="tel">
+
+
+
+<select id="package">
+<option>Oumra Essentielle</option>
+<option>Oumra VIP</option>
+<option>Hajj Premium</option>
+</select>
+
+<input list="countries" id="country" placeholder="Choisissez ou tapez votre pays">
+
+<datalist id="countries">
+
+<option value="Afghanistan">
+<option value="Afrique du Sud">
+<option value="Albanie">
+<option value="Algérie">
+<option value="Allemagne">
+<option value="Andorre">
+<option value="Angola">
+<option value="Arabie Saoudite">
+<option value="Argentine">
+<option value="Arménie">
+<option value="Australie">
+<option value="Autriche">
+<option value="Azerbaïdjan">
+
+<option value="Bahreïn">
+<option value="Bangladesh">
+<option value="Belgique">
+<option value="Bénin">
+<option value="Biélorussie">
+<option value="Bolivie">
+<option value="Bosnie-Herzégovine">
+<option value="Brésil">
+<option value="Bulgarie">
+
+<option value="Cambodge">
+<option value="Cameroun">
+<option value="Canada">
+<option value="Chili">
+<option value="Chine">
+<option value="Chypre">
+<option value="Colombie">
+<option value="Congo">
+<option value="Corée du Sud">
+<option value="Côte d’Ivoire">
+<option value="Croatie">
+
+<option value="Danemark">
+<option value="Djibouti">
+
+<option value="Égypte">
+<option value="Émirats Arabes Unis">
+<option value="Équateur">
+<option value="Espagne">
+<option value="Estonie">
+<option value="États-Unis">
+<option value="Éthiopie">
+
+<option value="Finlande">
+<option value="France">
+
+<option value="Gabon">
+<option value="Gambie">
+<option value="Géorgie">
+<option value="Ghana">
+<option value="Grèce">
+
+<option value="Haïti">
+<option value="Hongrie">
+
+<option value="Inde">
+<option value="Indonésie">
+<option value="Irak">
+<option value="Iran">
+<option value="Irlande">
+<option value="Islande">
+<option value="Israël">
+<option value="Italie">
+
+<option value="Japon">
+<option value="Jordanie">
+
+<option value="Kazakhstan">
+<option value="Kenya">
+<option value="Koweït">
+
+<option value="Liban">
+<option value="Libye">
+<option value="Luxembourg">
+
+<option value="Madagascar">
+<option value="Malaisie">
+<option value="Mali">
+<option value="Maroc">
+<option value="Mauritanie">
+<option value="Mexique">
+
+<option value="Niger">
+<option value="Nigéria">
+<option value="Norvège">
+
+<option value="Oman">
+
+<option value="Pakistan">
+<option value="Pays-Bas">
+<option value="Pérou">
+<option value="Philippines">
+<option value="Pologne">
+<option value="Portugal">
+
+<option value="Qatar">
+
+<option value="Roumanie">
+<option value="Royaume-Uni">
+<option value="Russie">
+
+<option value="Sénégal">
+<option value="Serbie">
+<option value="Singapour">
+<option value="Slovaquie">
+<option value="Slovénie">
+<option value="Soudan">
+<option value="Suède">
+<option value="Suisse">
+
+<option value="Tchad">
+<option value="Thaïlande">
+<option value="Tunisie">
+<option value="Turquie">
+
+<option value="Ukraine">
+
+<option value="Venezuela">
+<option value="Vietnam">
+
+<option value="Yémen">
+
+<option value="Zambie">
+<option value="Zimbabwe">
+
+</datalist>
+
+<input type="date" id="date">
+
+<select id="room">
+<option>Individuelle</option>
+<option>Double</option>
+<option>Triple</option>
+<option>Quadruple</option>
+<option>Famille</option>
+</select>
+
+<textarea id="message" placeholder="Message (optionnel)"></textarea>
+
+<button type="submit" class="btn">
+Envoyer la demande
+</button>
+
+</form>
+
+</section>
+
+<section class="reviews" id="reviews">
+  <h2>Ils nous font confiance</h2>
+  <div class="review">
+    ⭐⭐⭐⭐⭐ “Organisation parfaite, voyage inoubliable !”
+  </div>
+  <div class="review">
+    ⭐⭐⭐⭐⭐ “Service VIP incroyable, je recommande !”
+  </div>
+</section>
+
+<section class="booking" id="booking">
+  <h2>Demandez-nous le service que vous souhaitez que l'on vous apporte</h2>
+  <form id="bookingForm">
+    <input type="text" placeholder="Nom complet" required>
+    <input type="tel" placeholder="Téléphone" required>
+    <select>
+      <option>Choisir une option</option>
+      <option>VISA Uniquement</option>
+      <option>Billet d'avion uniquement</option>
+      <option>Billet de train uniquement</option>
+      <option>Hébergement uniquement</option>
+      <option>Transport uniquement</option>
+      <option>Accompagnement uniquement</option>
+    </select>
+    <button type="submit">Envoyer</button>
+  </form>
+</section>
+
+<section class="contact" id="contact">
+  <h2>Contact</h2>
+  <p>📞 +966540012913</p>
+  <a href="https://wa.me/966540012913" class="btn">WhatsApp direct</a>
+</section>
+
+<footer>
+  <p>© 2026 AHAD HADJ & OUMRA</p>
+</footer>
+
+<script src="script.js"></script>
+
+<div class="card">
+
+<div class="badge">
+VIP
+</div>
+
+<h3>VIP Elite</h3>
+
+<p>
+Hôtel 5⭐ proche Haram,
+transport privé,
+accompagnement personnalisé.
+</p>
+
+</div>
+
+<section class="stats">
+
+<div>
+<h2>+500</h2>
+<p>Pèlerins accompagnés</p>
+</div>
+
+<div>
+<h2>24/7</h2>
+<p>Assistance client</p>
+</div>
+
+<div>
+<h2>5⭐</h2>
+<p>Service Premium</p>
+</div>
+
+</section>
+
+<section class="about">
+
+<img src="images/kaaba.jpg" alt="Mosquée Al-Haram">
+
+<div class="about-text">
+
+<h2>
+Votre voyage spirituel avec AHAD
+</h2>
+
+<p>
+Nous vous accompagnons pour votre Hajj et votre Oumra avec des services adaptés à vos besoins.
+</p>
+
+</div>
+
+</section>
+
+
+<script src="script.js"></script>
+
+
+</body>
+</html>

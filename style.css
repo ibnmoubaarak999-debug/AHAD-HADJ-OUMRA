@@ -1,0 +1,737 @@
+:root {
+
+--gold:#C9A227;
+
+--gold-light:#F4D77B;
+
+--ivory:#FAF8F2;
+
+--green:#064E3B;
+
+--dark:#111111;
+
+}
+
+/* RESET */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #ffffff;
+  color: #222;
+}
+
+/* HEADER */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 20px 40px;
+
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+
+  z-index: 1000;
+}
+
+.logo {
+  color: gold;
+  font-weight: 600;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* VIDEO */
+.video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* OVERLAY */
+.overlay {
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.55);
+  z-index: -1;
+}
+
+/* CONTENU */
+.content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+/* TEXTE */
+h1, h2, h3 {
+  font-family: Poppins, sans-serif;
+  font-weight: 600;
+}
+
+
+h2 {
+  font-size: 40px;
+  position: relative;
+}
+
+h2::after {
+  content:"";
+  display:block;
+  width:80px;
+  height:3px;
+  background:var(--gold);
+  margin:10px auto 0;
+}
+.btn {
+
+display:inline-block;
+
+background:
+linear-gradient(
+45deg, #c9a227, #f7df8a
+);
+
+color:#000;
+
+padding:15x 35px;
+
+border-radius:50px;
+
+font-weight:bold;
+
+transition:0.4s;
+
+box-shadow:
+0 10px 30px rgba(212,175,55,0.3);
+
+}
+
+
+.btn:hover {
+
+transform:
+translateY(-5px)
+scale(1.05);
+
+
+box-shadow:
+0 20px 50px rgba(212,175,55,0.6);
+
+}
+
+/* SECTIONS */
+section {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+.fade-in {
+  opacity:0;
+  transform:translateY(40px);
+  animation: apparition 1.5s ease forwards;
+}
+
+@keyframes apparition {
+  to {
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+.video-bg {
+ animation: zoom 20s infinite alternate;
+}
+
+@keyframes zoom {
+ from {
+   transform:scale(1);
+ }
+ to {
+   transform:scale(1.08);
+ }
+}
+
+/* SECTION OFFRES */
+.offers {
+  padding: 100px 20px;
+}
+
+/* CONTENEUR DES CARTES */
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+
+/* CARTE PREMIUM */
+.card {
+
+  width: 300px;
+  padding: 35px;
+
+  background: white;
+  backdrop-filter: blur(15px);
+
+  border: 1px solid #e6c65c;
+  border-radius: 25px;
+
+  box-shadow:
+  0 15px 40px rgba(0,0,0,0.12);
+
+  transition: all 0.4s ease;
+
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* LUMIÈRE QUI PASSE */
+.card::before {
+
+  content:"";
+
+  position:absolute;
+
+  top:-100%;
+  left:-100%;
+
+  width:200%;
+  height:200%;
+
+  background:
+  linear-gradient(
+  120deg,
+  transparent,
+  rgba(255,215,0,0.4),
+  transparent
+  );
+
+  transform:rotate(25deg);
+
+  transition:0.8s;
+}
+
+
+.card:hover::before {
+
+  top:100%;
+  left:100%;
+
+}
+
+
+/* EFFET 3D */
+.card:hover {
+
+  transform:
+  translateY(-20px)
+  scale(1.05);
+
+  box-shadow:
+  0 30px 80px rgba(212,175,55,0.35);
+
+}
+
+
+/* TITRES */
+.card h3 {
+
+  color:#d4af37;
+  font-size:30px;
+
+}
+
+
+/* TEXTE */
+.card p {
+
+  color:#eee;
+  line-height:1.7;
+
+}
+
+.card {
+
+opacity:0;
+
+transform:translateY(60px);
+
+}
+
+.badge {
+
+position:absolute;
+
+top:20px;
+right:20px;
+
+background:#d4af37;
+
+color:black;
+
+padding:8px 15px;
+
+border-radius:20px;
+
+font-weight:bold;
+
+}
+
+.stats {
+
+display:flex;
+
+justify-content:center;
+
+gap:50px;
+
+padding:80px 20px;
+
+text-align:center;
+
+}
+
+
+.stats h2 {
+
+font-size:50px;
+
+color:#d4af37;
+
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+nav a {
+
+color:white;
+
+text-decoration:none;
+
+font-size:16px;
+
+}
+
+
+nav a:hover {
+
+color:#d4af37;
+
+}
+
+
+/* MENU MOBILE */
+
+.hamburger {
+
+display:none;
+
+font-size:30px;
+
+color:#d4af37;
+
+cursor:pointer;
+
+}
+
+
+@media(max-width:768px){
+
+header {
+
+padding:15px 20px;
+
+}
+
+
+nav {
+
+position:absolute;
+
+top:70px;
+
+left:0;
+
+width:100%;
+
+background:rgba(0,0,0,0.95);
+
+display:none;
+
+flex-direction:column;
+
+}
+
+
+nav.active {
+
+display:flex;
+
+}
+
+
+.hamburger {
+
+display:block;
+
+}
+
+
+.language {
+
+display:none;
+
+}
+
+}
+
+.language {
+  display:flex;
+  gap:8px;
+}
+
+
+.language button {
+
+border:none;
+
+background:transparent;
+
+font-size:22px;
+
+cursor:pointer;
+
+}
+
+.about {
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:50px;
+
+padding:100px 20px;
+
+}
+
+
+.about img {
+
+width:450px;
+
+border-radius:30px;
+
+box-shadow:
+0 20px 60px rgba(0,0,0,0.6);
+
+transition:0.5s;
+
+}
+
+
+.about img:hover {
+
+transform:scale(1.05);
+
+}
+
+
+.about-text {
+
+max-width:500px;
+
+}
+
+.about {
+
+background:
+rgba(255,255,255,0.05);
+
+backdrop-filter:blur(10px);
+
+border-radius:30px;
+
+}
+
+.logo {
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+color:var(--gold);
+
+font-weight:bold;
+
+font-size:28px;
+
+}
+
+
+.logo-icon {
+
+font-size:35px;
+
+}
+
+
+.logo small {
+
+display:block;
+
+font-size:11px;
+
+letter-spacing:3px;
+
+color:#555;
+
+}
+
+
+.features {
+
+display:flex;
+
+justify-content:center;
+
+gap:30px;
+
+flex-wrap:wrap;
+
+}
+
+
+.feature {
+
+width:280px;
+
+padding:35px;
+
+background:white;
+
+border-radius:25px;
+
+box-shadow:
+0 15px 40px rgba(0,0,0,.1);
+
+transition:.4s;
+
+}
+
+
+.feature:hover {
+
+transform:translateY(-15px);
+
+}
+
+
+.feature:first-letter {
+
+font-size:40px;
+
+}
+
+.slogan {
+
+font-size:20px;
+
+font-style:italic;
+
+color:#555;
+
+}
+
+.packages {
+
+padding:100px 20px;
+
+background:var(--ivory);
+
+text-align:center;
+
+}
+
+
+.packages-container {
+
+display:flex;
+
+justify-content:center;
+
+gap:30px;
+
+flex-wrap:wrap;
+
+}
+
+
+.package {
+
+background:white;
+
+border-radius:25px;
+
+padding:40px;
+
+width:300px;
+
+box-shadow:
+0 20px 50px rgba(0,0,0,0.1);
+
+transition:0.4s;
+
+position:relative;
+
+}
+
+
+.package:hover {
+
+transform:translateY(-15px);
+
+}
+
+
+/* CARTE VIP */
+
+.package.vip {
+
+border:2px solid var(--gold);
+
+transform:scale(1.05);
+
+}
+
+
+.package.vip::before {
+
+content:"VIP";
+
+position:absolute;
+
+top:-10px;
+
+right:20px;
+
+background:var(--gold);
+
+color:white;
+
+padding:5px 15px;
+
+border-radius:20px;
+
+font-size:12px;
+
+}
+
+
+.price {
+
+font-size:28px;
+
+color:var(--gold);
+
+margin:20px 0;
+
+}
+
+
+.package ul {
+
+list-style:none;
+
+padding:0;
+
+}
+
+
+.package li {
+
+margin:10px 0;
+
+}
+
+.booking {
+
+padding:100px 20px;
+
+background:var(--ivory);
+
+text-align:center;
+
+}
+
+
+#bookingForm {
+
+max-width:600px;
+
+margin:auto;
+
+display:flex;
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+
+#bookingForm input,
+#bookingForm select,
+#bookingForm textarea {
+
+padding:15px;
+
+border-radius:10px;
+
+border:1px solid #ddd;
+
+font-size:16px;
+
+}
+
+
+#bookingForm textarea {
+
+height:120px;
+
+resize:none;
+
+}
